@@ -1,9 +1,10 @@
 /* Configurações Iniciais */
-    @import url(./palette.css);
+    @import url(./default-config.css);
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        outline: none;
     }
     #wrap {
         display: flex;
@@ -21,9 +22,76 @@
         padding: 20px;
     }
     #panel-lc {
+        display: flex;
+        flex-direction: column;
         height: 100%;
         background-color: hsl(0, 100%, 100%);
         border-radius: 15px;
+    }
+    #tabs {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    #tabs .tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        padding: 20px;
+        border-bottom: 4px solid transparent;
+        font-weight: 700;
+        font-size: 1.25em;
+        color: var(--b3);
+        cursor: pointer;
+    }
+    #tabs .tab.selected {
+        border-color: var(--b3);
+    }
+    #area-user-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #contents { 
+        flex-grow: 1;
+        width: 100%;
+        padding: 0 30px 30px 30px;
+    }
+    #contents .tab-content.hidden {
+        display: none;
+    }
+    #contents .tab-content .fieldset > * {
+        display: block;
+        margin-bottom: 15px;
+    }
+    #contents .tab-content .fieldset label {
+        color: var(--b3);
+        font-weight: 600;
+        font-size: 1.15em;
+    }
+    #contents .tab-content .fieldset input:not([type="submit"]) {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid var(--b3);
+        border-radius: 10px;
+        color: var(--b2);
+        font-size: 1.1em;
+    }
+    #contents .tab-content .fieldset input[type="submit"] {
+        width: 60%;
+        margin: 25px auto;
+        background-color: var(--b3);
+        padding: 20px;
+        border-style: none;
+        border-radius: 10px;
+        color: white;
+        font-weight: 500;
+        font-size: 1.15em;
+        cursor: pointer;
+    }
+    #contents .tab-content .fieldset input[type="submit"]:hover {
+        background-color: var(--b2);
     }
 /******/
 /* Área de Logo */

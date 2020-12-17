@@ -2,21 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// Rotas de Renderização de Páginas
+Route::get('/', 'C_Main@renderInicialPage')->name('main.renderInicial');
+Route::get('crud', 'C_Main@renderCrudPage')->name('main.renderCrud');
 
-Route::get('/', function () {
-    return view('v_inicial');
-});
-
-Route::get('crud', function () {
-    return view('v_crud');
-});
+// Rotas de Usuário
+Route::get('login', 'C_User@login')->name('login');
+Route::post('create/user', 'C_User@createUser')->name('create.user');
