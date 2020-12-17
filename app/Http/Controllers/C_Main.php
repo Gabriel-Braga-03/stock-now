@@ -16,7 +16,7 @@ class C_Main extends Controller
     }
     public function renderCrudPage(Request $request)
     {
-        if ($request->session()->exists('user_logged')) {
+        if ($request->session()->has('user_logged')) {
             return view('v_crud');
         } else {
             return redirect()->route('main.renderInicial');

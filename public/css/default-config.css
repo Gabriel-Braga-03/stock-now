@@ -5,8 +5,17 @@
 :root {
     --b1: hsla(197, 94%, 6%, 1);
     --b2: hsla(197, 66%, 21%, 1);
-    --b3: hsla(196, 24%, 46%, 1);
+    --b3: #598291;
     --b4: hsla(126, 15%, 72%, 1);
     --b5: hsla(79, 55%, 92%, 1);
+    --g1: hsla(0, 0%, 15%, 1);
+    --g2: hsla(0, 0%, 25%, 1);
+    --g3: hsla(0, 0%, 35%, 1);
     font-family: Montserrat;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
 }

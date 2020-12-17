@@ -3,6 +3,7 @@
     <head>
         <title>Página Inicial</title>
         <meta charset="utf-8"/>
+        <link rel="icon" href="./img/sn-logo-90x90.png">
         <link rel="stylesheet" href="./css/v_inicial.css">
     </head>
     <body>
@@ -23,11 +24,11 @@
                             @csrf
                             <div class="fieldset">
                                 <label for="">Nome de Usuário:</label>
-                                <input name="name" type="text" required/>
+                                <input name="name" type="text" maxlength="50" autocomplete="off" required/>
                             </div>
                             <div class="fieldset">
                                 <label for="">Senha:</label>
-                                <input name="password" type="password" required/>
+                                <input name="password" type="password" maxlength="14" autocomplete="off" required/>
                             </div>
                             <div class="fieldset">
                                 <input value="Entrar" type="submit"/>
@@ -37,11 +38,11 @@
                             @csrf
                             <div class="fieldset">
                                 <label for="">Novo Nome:</label>
-                                <input name="name" type="text" required/>
+                                <input name="name" type="text" maxlength="50" autocomplete="off" required/>
                             </div>
                             <div class="fieldset">
                                 <label for="">Nova Senha:</label>
-                                <input name="password" type="password" required/>
+                                <input name="password" type="password" maxlength="14" autocomplete="off" required/>
                             </div>
                             <div class="fieldset">
                                 <input value="Cadastrar" type="submit"/>
