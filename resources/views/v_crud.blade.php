@@ -13,8 +13,8 @@
             <nav class="box">
                 <img src="./img/sn-logo-40x40.png"/>
                 <h1>Stock<span>Now</span></h1>
-                <a href="../_controller/C_Principal.php?reset">Reset</a>
-                <a id="down" href="#">Download</a>
+                <a href="#">Relatório</a>
+                <a href="{{ route('logout') }}">Sair</a>
             </nav>
 
             <!-- Content -->
@@ -55,7 +55,7 @@
                         <h2>Registros de Produtos</h2>
                     </header>
                     <div class="wrap-table">
-                        <table class="tabela">
+                        <table id="main-table" class="table">
                             <thead>
                                 <tr>
                                     <th>CB</th>
@@ -65,7 +65,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Inserir Tabela -->
+                                <!-- Inserindo Tabela -->
                                 @if (sizeof($product_regs) > 0)
                                     @foreach ($product_regs as $p)
                                         <tr>
@@ -138,7 +138,7 @@
         </div>
 
         <!-- Modal de Resultado da Pesquisa -->
-        <?php 
+        <!-- 
             if (isset($_SESSION['pesq_result'])) {
                 echo "
                 <div id='mod_pesq_result' class='modal with-back'>
@@ -178,7 +178,10 @@
                 </div>";
                 unset($_SESSION['pesq_result']);
             }
-        ?>
-
+        -->
     </body>
+    
+    <!-- Script JS -->
+    <script src="./js/v_crud.js"></script>
+
 </html>

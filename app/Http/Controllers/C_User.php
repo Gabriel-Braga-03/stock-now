@@ -20,6 +20,11 @@ class C_User extends Controller
             return redirect()->route('main.renderInicial');
         }
     }
+    public function logout(Request $request)
+    {
+        $request->session()->forget('user_logged');
+        return redirect()->route('main.renderInicial');
+    }
     public function createUser(Request $request)
     {
         // Criando Instância de Usuário e Salvando no Banco
