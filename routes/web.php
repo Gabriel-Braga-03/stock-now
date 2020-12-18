@@ -9,3 +9,6 @@ Route::get('crud', 'C_Main@renderCrudPage')->name('main.renderCrud');
 // Rotas de Usuário
 Route::get('login', 'C_User@login')->name('login');
 Route::post('create/user', 'C_User@createUser')->name('create.user');
+
+// Rotas de Produto
+Route::post('create/product', 'C_Product@createProduct')->name('create.product');

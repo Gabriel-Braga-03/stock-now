@@ -25,24 +25,23 @@
                         <h2>Atributos de Produto</h2>
                     </header>
                     <hr/>
-                    <form class="form" id="main_form" method="POST" action="../_controller/C_Principal.php">
+                    <form class="form" id="main_form" action="{{ route('create.product') }}" method="POST">
+                        @csrf
                         <div class="fieldset">
                             <label>Código de Barra:</label>
-                            <input name="code_bar" type="text" maxlength="50" autocomplete="off" required/>
+                            <input name="code_bar" type="text" maxlength="20" autocomplete="off" required/>
                         </div>
                         <div class="fieldset">
                             <label>Nome:</label>
                             <input name="name" type="text" maxlength="50" autocomplete="off" required/>
                         </div>
                         <div class="fieldset half">
-                            <div>
                                 <label>Quantidade:</label>
                                 <input name="qtd" type="number" min="0" max="999999999" required/>
-                            </div>
-                            <div>
+                        </div>
+                        <div class="fieldset half">
                                 <label>Preço:</label>
-                                <input name="price" type="number" min="0.00" max="999999999.99" step="0.10" required/>
-                            </div>
+                                <input name="price" type="number" min="0.00" max="999999999.99" step="0.01" required/>
                         </div>
                         <div class="fieldset">
                             <input name="btn_salvar" type="submit" value="Salvar"/>
@@ -53,24 +52,32 @@
                 <!-- Tabela -->
                 <div class="box w-6">
                     <header class="header">
-                        <h2>Registros de Pessoas</h2>
+                        <h2>Registros de Produtos</h2>
                     </header>
                     <div class="wrap-table">
                         <table class="tabela">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>CB</th>
                                     <th>Nome</th>
-                                    <th>CPF</th>
+                                    <th>QTD</th>
+                                    <th>Preço</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- Inserir Tabela -->
-                                <tr>
-                                    <td>1</td>
-                                    <td>Gabriel</td>
-                                    <td>9492349</td>
-                                </tr>
+                                @if (sizeof($product_regs) > 0)
+                                    @foreach ($product_regs as $p)
+                                        <tr>
+                                            <td>{{$p->code_bar}}</td>
+                                            <td>{{$p->name}}</td>
+                                            <td>{{$p->qtd}}</td>
+                                            <td>R$ {{$p->price}}</td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <td colspan="4">Nenhum produto registrado...</td>
+                                @endif
                             </tbody>
                         </table>
                     </div>

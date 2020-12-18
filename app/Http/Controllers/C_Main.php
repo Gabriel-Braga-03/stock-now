@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class C_Main extends Controller
 {
@@ -17,7 +18,9 @@ class C_Main extends Controller
     public function renderCrudPage(Request $request)
     {
         if ($request->session()->has('user_logged')) {
-            return view('v_crud');
+            // Pesquisando registro de produtos no banco
+            $product_regs = DB::table('products')->get();
+            return view('v_crud', ['product_regs' => $product_regs]);
         } else {
             return redirect()->route('main.renderInicial');
         }
