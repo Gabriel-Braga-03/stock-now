@@ -13,3 +13,6 @@ Route::post('create/user', 'C_User@createUser')->name('create.user');
 
 // Rotas de Produto
 Route::post('create/product', 'C_Product@createProduct')->name('create.product');
+Route::get('read/product/{code_bar}/{name}/{qtd}/{price}', 'C_Product@readProduct')->name('read.product');
+Route::get('update/product/{code_bar}/{name}/{qtd}/{price}', 'C_Product@updateProduct')->name('update.product');
+Route::get('delete/product/{code_bar}', 'C_Product@deleteProduct')->name('delete.product');

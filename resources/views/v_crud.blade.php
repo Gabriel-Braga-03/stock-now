@@ -25,7 +25,7 @@
                         <h2>Atributos de Produto</h2>
                     </header>
                     <hr/>
-                    <form class="form" id="main_form" action="{{ route('create.product') }}" method="POST">
+                    <form class="form" id="main-form" action="{{ route('create.product') }}" method="POST">
                         @csrf
                         <div class="fieldset">
                             <label>Código de Barra:</label>

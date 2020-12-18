@@ -19,7 +19,13 @@ class C_Main extends Controller
     {
         if ($request->session()->has('user_logged')) {
             // Pesquisando registro de produtos no banco
-            $product_regs = DB::table('products')->get();
+            if ($request->session()->has('product_search_table')) {
+                $request->session()->get('product_search_table');
+                $product_regs = $request->session()->get('product_search_table');
+                $request->session()->forget('product_search_table');
+            } else {
+                $product_regs = DB::table('products')->get();
+            }
             return view('v_crud', ['product_regs' => $product_regs]);
         } else {
             return redirect()->route('main.renderInicial');
